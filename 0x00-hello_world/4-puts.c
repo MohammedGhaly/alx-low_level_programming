@@ -1,9 +1,9 @@
 #include <stdio.h>
-/*
- * main		entry point
- * print the required text
- * return 0 	(success)
+
+/**
+ * main - Entry point
  *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
