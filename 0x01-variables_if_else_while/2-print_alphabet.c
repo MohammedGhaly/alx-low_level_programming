@@ -8,12 +8,13 @@
  */
 int main(void)
 {
-	int i = 97 ;
-	while (i < 122)
+	int i = 97;
+
+	while (i < 123)
 	{
 		putchar(i);
-		i++;		
-	}	
+		i++;
+	}
 	putchar('\n');
-        return (0);
+	return (0);
 }
