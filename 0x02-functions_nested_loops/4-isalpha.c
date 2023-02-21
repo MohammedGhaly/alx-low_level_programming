@@ -3,6 +3,8 @@
 /**
  * _isalpha - checks for lowercase or uppercase character
  *
+ * c - integer number represents ascii of char
+ *
  * Return: Always 0 (Success)
  */
 int _isalpha(int c)
