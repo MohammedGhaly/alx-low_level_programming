@@ -9,10 +9,9 @@
  */
 int print_last_digit(int n)
 {
+	int r = 0;
 	if (n < 0)
-	{
-		int r = 0;
-		
+	{		
 		r = ((-n % 10) + 48);
 	}
 	else
