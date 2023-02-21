@@ -5,7 +5,7 @@
  *
  *@n: integer number
  *
- * Return: n if n is non-negative integer, -n if n is negative integer (Success)
+ * Return: n if n is non-negative integer, -n if n is negative integer
  */
 int _abs(int n)
 {
