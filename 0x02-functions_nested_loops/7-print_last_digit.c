@@ -6,19 +6,19 @@
  *
  *@n: integer number
  *
- * Return: the last digit of the integer Always (Success) 
+ * Return: the last digit of the integer Always (Success)
  */
 int print_last_digit(int n)
 {
 	int r = 0;
 
 	if (n == INT_MIN)
-        {
+	{
 		_putchar(56);
 		return (8);
-        }
-        else if (n < 0)
-	{		
+	}
+	else if (n < 0)
+	{	
 		r = -n % 10;
 	}
 	else
