@@ -3,7 +3,7 @@
 /**
  * _islower - checks for lowercase character
  *
- * c - integer number represents ascii of char
+ * @c: integer number represents ascii of char
  *
  * Return: Always 0 (Success)
  */
