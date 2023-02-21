@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isalpha - checks for lowercase or uppercase character
+ * print_sign - checks for lowercase or uppercase character
  *
  *@n: integer number
  *
