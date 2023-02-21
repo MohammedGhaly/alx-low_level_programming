@@ -7,13 +7,15 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void){
-	char arr[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r'};
+int main(void)
+{
+	char arr[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r', '\n'};
 	int i = 0;
-	while (i <= 7)
+
+	while (i <= 8)
 	{
 		_putchar(arr[i]);
 		i++;
 	}
-	return 0;
+	return (0);
 }
