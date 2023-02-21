@@ -1,11 +1,12 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_last_digit - checks for lowercase or uppercase character
  *
  *@n: integer number
  *
- * Return: the last digit of the integer Always (Success)
+ * Return: the last digit of the integer Always (Success) 
  */
 int print_last_digit(int n)
 {
