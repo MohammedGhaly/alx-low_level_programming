@@ -1,3 +1,3 @@
-#inclued <uinstd.h>
+#include <uinstd.h>
 
 int _putchar(char c);
