@@ -5,9 +5,11 @@
  *
  * Return: the last digit of the integer Always (Success)
  */
-void jack_bauer(void){
+void jack_bauer(void)
+{
 	int m = 0;
 	int h = 0;
+
 	while (h < 24)
 	{
 		while (m < 60)
