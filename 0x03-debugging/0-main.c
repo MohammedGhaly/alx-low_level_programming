@@ -4,6 +4,7 @@
  * main - tests the sign of an integer
  * Return: 0
  */
+
 int main(void)
 {
 	int i;
