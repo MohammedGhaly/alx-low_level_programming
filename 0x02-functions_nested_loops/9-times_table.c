@@ -8,7 +8,7 @@
 void times_table(void)
 {
 	int f = 0;
-	int s = 9;
+	int s = 0;
 	int r = 0;
 
 	while (f < 10)
