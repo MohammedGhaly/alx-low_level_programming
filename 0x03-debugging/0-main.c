@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- *
  * main - tests the sign of an integer
- * Return: Always 0 (Success)
+ * Return: 0
  */
 int main(void)
 {
