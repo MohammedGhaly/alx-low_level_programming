@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isalpha - checks for lowercase or uppercase character
+ * add - takes two integers and adds them
  *
  *@x: integer 1
  *
@@ -9,6 +9,7 @@
  *
  * Return: the sum of x and y (Success)
  */
-int add(int x, int y){
+int add(int x, int y)
+{
 	return (x + y);
 }
