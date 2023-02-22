@@ -18,23 +18,26 @@ void times_table(void)
 			r = f * s;
 			if (r > 9)
 			{
+				_putchar(32);
 				_putchar(((r - (r % 10)) / 10 + 48));
 				_putchar((r % 10) + 48);
 				if (s != 9)
 				{
 					_putchar(44);
 				}
-				_putchar(32);
 			}
 			else
 			{
+				if (s != 0)
+				{
+					_putchar(32);
+					_putchar(32);
+				}
 				_putchar(48 + r);
 				if (s != 9)
 				{
 					_putchar(44);
 				}
-				_putchar(32);
-				_putchar(32);
 			}
 			s++;
 		}
