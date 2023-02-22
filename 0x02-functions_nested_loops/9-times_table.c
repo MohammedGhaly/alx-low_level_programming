@@ -15,18 +15,24 @@ void times_table(void)
 	{
 		while (s < 10)
 		{
-			r = f*s;
+			r = f * s;
 			if (r > 9)
 			{
 				_putchar(((r - (r % 10)) / 10 + 48));
 				_putchar((r % 10) + 48);
-				_putchar(44);
+				if (s != 9)
+				{
+					_putchar(44);
+				}
 				_putchar(32);
 			}
 			else
 			{
 				_putchar(48 + r);
-				_putchar(44);
+				if (s != 9)
+				{
+					_putchar(44);
+				}
 				_putchar(32);
 				_putchar(32);
 			}
