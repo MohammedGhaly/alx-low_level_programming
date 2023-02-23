@@ -2,13 +2,9 @@
 #include <stdio.h>
 
 /**
- * mul - multiplies two numbers.
+ * print_numbers - prints the  numbers from 0 to 9.
  *
- *@a: the first digit
- *
- *@b: the second digit
- *
- * Return: the multiplication of a * b.
+ * Return: 0 always success.
  */
 void print_numbers(void)
 {
