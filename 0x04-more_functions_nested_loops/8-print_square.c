@@ -7,7 +7,7 @@
  *
  * Return: 0 Always success
  */
-void print_square(int size)
+void print_square(int size);
 {
 	int i;
 
@@ -16,7 +16,6 @@ void print_square(int size)
 		_putchar('\n');
 		return;
 	}
-
 	for (i = 0; i < size; i++)
 	{
 		for (int j = 0; j < size; j++)
