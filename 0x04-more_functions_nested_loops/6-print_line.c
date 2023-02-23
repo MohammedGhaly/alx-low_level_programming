@@ -3,6 +3,8 @@
 /**
  * print_line - a function that prints a line
  *
+ *@n: number of '_'s in the line
+ *
  * Return: 0 Always success
  */
 void print_line(int n)
