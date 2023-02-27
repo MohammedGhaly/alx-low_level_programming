@@ -3,7 +3,7 @@
 /**
  * puts2 - prints char and not its neighbours
  *
- *@s: pointer of the first char
+ *@str: pointer of the first char
  *
  * Return: Always 0.
  */
