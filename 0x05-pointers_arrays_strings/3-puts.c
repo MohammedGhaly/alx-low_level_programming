@@ -3,7 +3,7 @@
 /**
  * _puts - mimics puts fun of the standard library
  *
- *@s: the pointer of the first of the string
+ *@str: the pointer of the first of the string
  *
  * Return: Always 0.
  */
