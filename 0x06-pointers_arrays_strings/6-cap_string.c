@@ -1,48 +1,34 @@
 #include "main.h"
 
 /**
- * cap_string - a function that capitalizes all words of a string
- * @n: input string
- * Return: caps on first letter of a separator
+ * cap_string - capitalizes all words of a string
+ * @str: input string
+ * Return: pointer of the capetalized string
  */
 char *cap_string(char *str)
 {
-	int shouldCapitalize = 0;
-	char *stri = str;
+	int i, x;
+	int cap = 32;
+	int separators[] = {',', ';', '.', '?', '"',
+		 '(', ')', '{', '}', ' ', '\n', '\t'};
 
-	while (*str != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (shouldCapitalize)
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (!(*str == ',' || *str == ';' || *str == '.'
-			|| *str == '!'
-			|| *str == '?' || *str == '\"'
-			|| *str == '(' || *str == ')' || *str == '{'
-			|| *str == '}' || *str == '\n'
-			|| *str == ' ' || *str == '\t'))
+			str[i] = str[i] - cap;
+		}
+
+		cap = 0;
+
+		for (x = 0; x <= 12; x++)
+		{
+			if (str[i] == separators[x])
 			{
-				if ((*str <= 90 && *str >= 65)
-				|| !(*str <= 122 && *str >= 97))
-				{
-					shouldCapitalize = 0;
-					str++;
-					continue;
-				}
-				*str = (*str - 32);
-				shouldCapitalize = 0;
+				x = 12;
+				cap = 32;
 			}
-			str++;
-			continue;
 		}
-		if (*str == ',' || *str == ';' || *str == '.' || *str == '!'
-		|| *str == '?' || *str == '\"'
-		|| *str == '(' || *str == ')' || *str == '{'
-		|| *str == '}' || *str == '\n'
-		|| *str == ' ' || *str == '\t')
-		{
-			shouldCapitalize = 1;
-		}
-		str++;
 	}
-	return (stri);
+	return (str);
 }
