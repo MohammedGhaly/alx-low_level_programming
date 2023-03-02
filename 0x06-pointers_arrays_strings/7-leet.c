@@ -6,36 +6,23 @@
  * Return: the encoded string.
  */
 char *leet(char *c)
-{
-	char *C = c;
-
-	for (; *c != '\0'; c++)
 	{
-		if (*c == 'a' || *c == 'A')
+	char map[8] = {'o', 'l', 0, 'e', 'a', 0, 0, 't' };
+	int i;
+	int j;
+
+	for (j = 0; c[j] != '\0'; j++)
+	{
+		i = 0;
+
+		for (; i < 8; i++)
 		{
-			*c = '4';
-			continue;
-		}
-		if (*c == 'e' || *c == 'E')
-		{
-			*c = '3';
-			continue;
-		}
-		if (*c == 'o' || *c == 'O')
-		{
-			*c = '0';
-			continue;
-		}
-		if (*c == 't' || *c == 'T')
-		{
-			*c = '7';
-			continue;
-		}
-		if (*c == 'l' || *c == 'L')
-		{
-			*c = '1';
-			continue;
+			if (c[j] == map[i] || c[j] == (map[i] - 32))
+			{
+				c[j] = i + '0';
+				break;
+			}
 		}
 	}
-	return (C);
+	return (c);
 }
