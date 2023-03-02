@@ -14,13 +14,15 @@ char *cap_string(char *str)
 	{
 		if (shouldCapitalize)
 		{
-			if (!(*str == ',' || *str == ';' || *str == '.' || *str == '!'
+			if (!(*str == ',' || *str == ';' || *str == '.'
+			|| *str == '!'
 			|| *str == '?' || *str == '\"'
 			|| *str == '(' || *str == ')' || *str == '{'
 			|| *str == '}' || *str == '\n'
 			|| *str == ' ' || *str == '\t'))
 			{
-				if ((*str <= 90 && *str >= 65) || !(*str <= 122 && *str >= 97))
+				if ((*str <= 90 && *str >= 65)
+				|| !(*str <= 122 && *str >= 97))
 				{
 					shouldCapitalize = 0;
 					str++;
