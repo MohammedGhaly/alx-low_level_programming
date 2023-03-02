@@ -9,7 +9,7 @@ char *leet(char *c)
 {
 	char *C = c;
 
-	for(; *c != '\0'; c++)
+	for (; *c != '\0'; c++)
 	{
 		if (*c == 'a' || *c == 'A')
 		{
