@@ -39,7 +39,9 @@ char *cap_string(char *str)
 		|| *str == '(' || *str == ')' || *str == '{'
 		|| *str == '}' || *str == '\n'
 		|| *str == ' ' || *str == '\t')
+		{
 			shouldCapitalize = 1;
+		}
 		str++;
 	}
 	return (stri);
