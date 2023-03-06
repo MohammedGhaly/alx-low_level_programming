@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _memset - fills the first n bytes of the memory area pointed to by s with the constant byte b
- *@s: pointer to the first char
- *@b: the character that fills the memory
- *@n: the number of bytes to be filled with b
- * Return Always 0 (Success)
+ * _memset - Entry point
+ * @s: pointed destination
+ * @b: constant byte
+ * @n: bytes
+ * Return: Always 0 (Success)
  */
 char *_memset(char *s, char b, unsigned int n)
 {
