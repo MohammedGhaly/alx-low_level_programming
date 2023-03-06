@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _memcpy - Entry point
+ * _strchr - Entry point
  * @s: pointed string
  * @c: char to be found
  * Return: Always 0 (Success)
@@ -13,7 +13,8 @@ char *_strchr(char *s, char c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			return (&(s[i]));
+			return (s + i);
+		i++;
 	}
 	return (NULL);
 }
