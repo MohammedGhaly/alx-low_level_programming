@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strstr - Entry point
+ * print_chessboard - Entry point
  * @a: input array
  * Return: Always 0 (Success)
  */
