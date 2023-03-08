@@ -10,7 +10,7 @@ int _sqrt_recursion(int n)
 	if (n < 0)
 		return (-1);
 
-	return (squareRoot(n, (n + 1) / 2));
+	return (squareRoot(n, 0);
 }
 /**
  * squareRoot - calculates the square root of a number n
@@ -20,11 +20,11 @@ int _sqrt_recursion(int n)
  */
 int squareRoot(int n, int i)
 {
-	if (i < 1)
+	if (i > n)
 		return (-1);
 
 	if (i * i == n)
 		return (i);
 
-	return (squareRoot(n, i - 1));
+	return (squareRoot(n, i + 1));
 }
