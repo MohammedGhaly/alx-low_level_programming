@@ -21,7 +21,6 @@ void print_number(int n)
 		_putchar(48);
 		return;
 	}
-
 	if (n < 0)
 	{
 		n2 = -n;
@@ -29,7 +28,6 @@ void print_number(int n)
 	}
 	else
 		n2 = n;
-
 	for (i = 0; i < 10; i++)
 	{
 		temp = n2;
@@ -47,5 +45,4 @@ void print_number(int n)
 		}
 		d = d / 10;
 	}
-	_putchar('\n');
 }
