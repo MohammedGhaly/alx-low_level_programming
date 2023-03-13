@@ -26,13 +26,15 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		bigArray[i] = malloc(width * sizeof(int));
-		if (bigArray[i] == NULL)
+		if (bigArray == NULL)
 		{
 			free(bigArray);
 			return (NULL);
 		}
 		for (j = 0; j < width; j++)
+		{
 			bigArray[i][j] = 0;
+		}
 	}
 	return (bigArray);
 }
