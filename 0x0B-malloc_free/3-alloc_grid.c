@@ -18,10 +18,17 @@ int **alloc_grid(int width, int height)
 	if (width < 1 || height < 1)
 		return (NULL);
 
-	bigArray = malloc((width * height) * sizeof(int));
+	bigArray = malloc(height * sizeof(int));
+	if (bigArray == NULL)
+	{
+		free(bigArray);
+		return (NULL);
+	}
 	for (i = 0; i < height; i++)
 	{
 		smallArray = malloc(width * sizeof(int));
+		if (smallArray == NULL)
+			return (NULL);
 		for (j = 0; j < width; j++)
 			smallArray[j] = 0;
 		bigArray[i] = smallArray;
