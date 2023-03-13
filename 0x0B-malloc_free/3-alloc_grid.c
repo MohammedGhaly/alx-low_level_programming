@@ -11,7 +11,6 @@
 int **alloc_grid(int width, int height)
 {
 	int **bigArray;
-	int *smallArray;
 	int i;
 	int j;
 
