@@ -43,12 +43,11 @@ int **clearAll(int **grid, int height, int flag)
 {
 	int i;
 
-	if (flag)
-		free(grid);
-	else
+	if (!flag)
 	{
 		for (i = 0; i < height; i++)
 			free(grid[i]);
 	}
+	free(grid);
 	return (NULL);
 }
