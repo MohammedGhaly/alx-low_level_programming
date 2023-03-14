@@ -10,33 +10,46 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **iarray;
-	int i, n;
+	int **array;
+	int i;
+	int j;
 
-	if (width <= 0 || height <= 0)
+	if (width < 1 || height < 1)
 		return (NULL);
 
-	iarray = malloc(sizeof(int) * height);
+	array = malloc(height * sizeof(int *));
 
-	if (iarray == NULL)
-	{
-		free(iarray);
-		return (NULL);
-	}
+	if (array == NULL)
+	return (clearAll(array, width, height, 1));
 
 	for (i = 0; i < height; i++)
 	{
-		iarray[i] = malloc(sizeof(int) * width);
-		if (iarray == NULL)
-		{
-			free(iarray);
-			return (NULL);
-		}
-
-		for (n = 0; n < width; n++)
-		{
-			iarray[i][n] = 0;
-		}
+		array[i] = malloc(width * sizeof(int));
+		if (array[i] == NULL)
+			return (clearAll(array, width, height, 0));
+		for (j = 0; j < width; j++)
+			array[i][j] = 0;
 	}
-	return (iarray);
+	return (array);
+}
+/**
+ * clearAll - frees allocated memory
+ * @grid: 2D Array
+ * @width: width of the array
+ * @height: height of the array
+ * @flag: 0 or 1
+ * Return: Always NULL
+ */
+int **clearAll(int **grid, int width, int height, int flag)
+{
+	int i;
+
+	if (flag)
+		free(grid);
+	else
+	{
+		for (i = 0; i < height; i++)
+			free(grid[i]);
+	}
+	return (NULL);
 }
