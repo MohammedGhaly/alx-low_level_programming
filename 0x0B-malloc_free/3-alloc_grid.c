@@ -20,13 +20,13 @@ int **alloc_grid(int width, int height)
 	array = malloc(height * sizeof(int *));
 
 	if (array == NULL)
-	return (clearAll(array, width, height, 1));
+	return (clearAll(array, height, 1));
 
 	for (i = 0; i < height; i++)
 	{
 		array[i] = malloc(width * sizeof(int));
 		if (array[i] == NULL)
-			return (clearAll(array, width, height, 0));
+			return (clearAll(array, height, 0));
 		for (j = 0; j < width; j++)
 			array[i][j] = 0;
 	}
@@ -35,12 +35,11 @@ int **alloc_grid(int width, int height)
 /**
  * clearAll - frees allocated memory
  * @grid: 2D Array
- * @width: width of the array
  * @height: height of the array
  * @flag: 0 or 1
  * Return: Always NULL
  */
-int **clearAll(int **grid, int width, int height, int flag)
+int **clearAll(int **grid, int height, int flag)
 {
 	int i;
 
