@@ -12,6 +12,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	int s1l = 0;
+	int s2l = 0;
 	int i = 0;
 	char *dest;
 
@@ -23,7 +24,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[s1l] != '\0')
 		s1l++;
 
-	dest = malloc(sizeof(char) * (s1l + n + 1));
+	while (s2[s2l] != '\0')
+		s2l++;
+
+	dest = malloc(sizeof(char) * (s1l + minof(n, s2l) + 1));
 	if (dest == NULL)
 		return (NULL);
 
@@ -47,4 +51,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	else
 		dest[i] == '\0';
 	return (dest);
+}
+/**
+ * minOf - finds the minimum of 2 integers
+ * @n: integer 1
+ * @s2l: integer 2
+ * Return: the minimum integer of n and s2l
+ */
+int minOf(int n, int s2l)
+{
+	if (n < s2l)
+		return (n);
+	else
+		return (s2l);
 }
