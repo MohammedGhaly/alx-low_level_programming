@@ -3,4 +3,4 @@
 
 #define ABS(a)  ((a) < (0) ? (-a) : (a))
 
-#endif /* OBJECT_LIKE_MACRO_H */
+#endif /* FUNCTION_LIKE_MACRO_H */
