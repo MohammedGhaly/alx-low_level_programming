@@ -7,9 +7,11 @@
  * @name: name of the dog (string)
  * @age: age of the dog (int)
  * @owner: owner of the dog (string)
- * Return: Success
+ * Return: strcut dog
  */
-dog_t *p_dog;
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *p_dog;
 	int i, lname, lowner;
 
 	p_dog = malloc(sizeof(*p_dog));
@@ -47,3 +49,4 @@ dog_t *p_dog;
 	p_dog->owner[i] = '\0';
 
 	return (p_dog);
+}
