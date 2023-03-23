@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 	first = 1;
 
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
 		if (!first)
 			printf(", ");
@@ -37,7 +37,7 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(ptr, double));
 				break;
 
-			case 's' :
+			case 's':
 				strarg = va_arg(ptr, char *);
 				if (strarg == NULL)
 				{
