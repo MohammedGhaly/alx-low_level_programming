@@ -10,8 +10,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list ptr;
-	int i;
-	int first;
+	int i, first;
 	char *strarg;
 
 	va_start(ptr, format);
@@ -28,15 +27,12 @@ void print_all(const char * const format, ...)
 			case 'c':
 				printf("%c", va_arg(ptr, int));
 				break;
-
 			case 'i':
 				printf("%d", va_arg(ptr, int));
 				break;
-
 			case 'f':
 				printf("%f", va_arg(ptr, double));
 				break;
-
 			case 's':
 				strarg = va_arg(ptr, char *);
 				if (strarg == NULL)
@@ -46,7 +42,6 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", strarg);
 				break;
-
 			default:
 			first = 1;
 				break;
