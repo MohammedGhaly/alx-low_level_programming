@@ -11,6 +11,11 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
+	if (n < 1)
+	{
+		printf("\n");
+		return;
+	}
 	unsigned int i;
 	va_list ptr;
 
