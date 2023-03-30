@@ -7,26 +7,17 @@
  */
 size_t print_list(const list_t *h)
 {
-	int size;
-	list_t *pot;
+	size_t size;
 
-	pot = malloc(sizeof(list_t));
 	size = 0;
-	if (h == NULL)
-		printf("[%d] %s\n", 0, "(nil)");
-	else
+	while (h != NULL)
 	{
-		*pot = *h;
-		do {
-			if (pot->str == NULL)
-				printf("[%d] %s\n", 0, "(nil)");
-			else
-				printf("[%d] %s\n", (pot->len), (pot->str));
-			size++;
-			pot = pot->next;
-		} while (pot != NULL);
-
+		if (h->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
+		else
+			printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
+		size++;
 	}
-	free(pot);
 	return (size);
 }
