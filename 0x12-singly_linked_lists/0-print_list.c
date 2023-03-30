@@ -13,7 +13,7 @@ size_t print_list(const list_t *h)
 	pot = malloc(sizeof(list_t));
 	size = 0;
 	if (h == NULL)
-		printf("[%d] %s", 0, "(nil)");
+		printf("[%d] %s\n", 0, "(nil)");
 	else
 	{
 		*pot = *h;
