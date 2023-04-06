@@ -1,13 +1,15 @@
-#0x14. C - Bit manipulation
+# C - Bit manipulation
 
-###Description:
+
+
+### Description:
 
 this project is part of ALX Software Engineering program 2023.
 contains tasks about how to manipulate bits and use bitwise operators.
 
 -------------
 
-###Files
+### Files
 
 |Filename		| Description		|
 |-----------------------|-----------------------|
@@ -19,6 +21,6 @@ contains tasks about how to manipulate bits and use bitwise operators.
 |5. 101			|contains a function that returns the number of bits you would need to flip to get from one number to another|
 
 -------------
-###Author &copy;
+### Author &copy;
 
 - Mohamed Ghaly
