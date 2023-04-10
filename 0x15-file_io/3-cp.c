@@ -27,7 +27,7 @@ int main(int ac, char *av[])
 			myExit("Error: Can't write to ", av[2], 99, 0);
 	}
 	if (read_n == -1)
-		myExit("Can't read from file ", av[1], 98, 0);
+		myExit("Error: Can't read from file ", av[1], 98, 0);
 
 	to_closed = close(to_fd);
 	from_closed = close(from_fd);
