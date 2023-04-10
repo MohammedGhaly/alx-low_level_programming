@@ -3,7 +3,7 @@
 /**
  * create_file - creates a new file and writes to it
  * @filename: string
- * @text_content
+ * @text_content: content of the created file
  * Return: 1 on Success, -1 on failure
  */
 int create_file(const char *filename, char *text_content)
@@ -23,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 		var = write(fd, text_content, _strlen(text_content));
 	close(fd);
 	if (var == -1)
-		return(-1);
+		return (-1);
 
 	return (1);
 }
