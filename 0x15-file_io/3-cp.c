@@ -15,10 +15,10 @@ int main(int ac, char *av[])
 		myExit("Usage: cp file_from file_to", "", 97, 0);
 	from_fd = open(av[1], O_RDONLY);
 	if (from_fd == -1)
-		myExit("Can't read from file ", av[1], 98, 0);
+		myExit("Error: Can't read from file ", av[1], 98, 0);
 	to_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to_fd == -1)
-		myExit("Can't write to ", av[2], 99, 0);
+		myExit("Error: Can't write to ", av[2], 99, 0);
 
 	while ((read_n = read(from_fd, buffer, 1024)) > 0)
 	{
