@@ -16,21 +16,24 @@ int main(int ac, char **av)
 	from_fd = open(av[1], O_RDONLY);
 	if (from_fd == -1)
 		myExit("Can't read from file ", av[1], 98, 0);
-	to_fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	to_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to_fd == -1)
 		myExit("Can't write to ", "to.txt", 99, 0);
 	buffer = malloc(1024);
-	read_n = read(from_fd, buffer, 1024);
+
+	while ((read_n = read(from_fd, buffer, 1024)) > 0)
+	{
+		n_write = write(to_fd, buffer, read_n);
+		if (n_write == -1)
+		{
+			free(buffer);
+			myExit("Error: Can't write to ", av[2], 99, 0);
+		}
+	}
 	if (read_n == -1)
 	{
 		free(buffer);
-		myExit("Can't read from file ", av[2], 98, 0);
-	}
-	n_write = write(to_fd, buffer, read_n);
-	if (n_write != read_n)
-	{
-		free(buffer);
-		myExit("Can't write to ", av[2], 99, 0);
+		myExit("Can't read from file ", av[1], 98, 0);
 	}
 	to_closed = close(to_fd);
 	from_closed = close(from_fd);
@@ -42,7 +45,7 @@ int main(int ac, char **av)
 	if (to_closed == -1)
 	{
 		free(buffer);
-				myExit("", "", 102, to_fd);
+		myExit("", "", 102, to_fd);
 	}
 	return (0);
 }
@@ -59,12 +62,12 @@ void myExit(char *message, char *filename, int code, int fd)
 {
 	if (code == 101 || code == 102)
 	{
-		dprintf(2, "%s%d\n", "Error: Can't close fd ", fd);
+		dprintf(STDERR_FILENO, "%s%d\n", "Error: Can't close fd ", fd);
 		exit(100);
 	}
 	else
 	{
-		dprintf(2, "%s%s\n", message, filename);
+		dprintf(STDERR_FILENO, "%s%s\n", message, filename);
 		exit(code);
 	}
 }
