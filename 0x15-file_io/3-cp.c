@@ -6,10 +6,10 @@
  * @av: pointer to arguments
  * Return: 0 on Success, otherwise exit
  */
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
 	int from_fd, to_fd, read_n, n_write, from_closed, to_closed;
-	char *buffer;
+	char buffer[1024];
 
 	if (ac != 3)
 		myExit("Usage: cp file_from file_to", "", 97, 0);
@@ -19,34 +19,22 @@ int main(int ac, char **av)
 	to_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to_fd == -1)
 		myExit("Can't write to ", "to.txt", 99, 0);
-	buffer = malloc(1024);
 
 	while ((read_n = read(from_fd, buffer, 1024)) > 0)
 	{
 		n_write = write(to_fd, buffer, read_n);
 		if (n_write == -1)
-		{
-			free(buffer);
 			myExit("Error: Can't write to ", av[2], 99, 0);
-		}
 	}
 	if (read_n == -1)
-	{
-		free(buffer);
 		myExit("Can't read from file ", av[1], 98, 0);
-	}
+
 	to_closed = close(to_fd);
 	from_closed = close(from_fd);
 	if (from_closed == -1)
-	{
-		free(buffer);
 		myExit("", "", 101, from_fd);
-	}
 	if (to_closed == -1)
-	{
-		free(buffer);
 		myExit("", "", 102, to_fd);
-	}
 	return (0);
 }
 
