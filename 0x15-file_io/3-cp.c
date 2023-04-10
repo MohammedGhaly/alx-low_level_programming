@@ -18,7 +18,7 @@ int main(int ac, char *av[])
 		myExit("Can't read from file ", av[1], 98, 0);
 	to_fd = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (to_fd == -1)
-		myExit("Can't write to ", "to.txt", 99, 0);
+		myExit("Can't write to ", av[2], 99, 0);
 
 	while ((read_n = read(from_fd, buffer, 1024)) > 0)
 	{
@@ -56,6 +56,6 @@ void myExit(char *message, char *filename, int code, int fd)
 	else
 	{
 		dprintf(STDERR_FILENO, "%s%s\n", message, filename);
-		exit(99);
+		exit(code);
 	}
 }
