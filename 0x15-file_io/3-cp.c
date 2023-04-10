@@ -56,6 +56,6 @@ void myExit(char *message, char *filename, int code, int fd)
 	else
 	{
 		dprintf(STDERR_FILENO, "%s%s\n", message, filename);
-		exit(code);
+		exit(99);
 	}
 }
