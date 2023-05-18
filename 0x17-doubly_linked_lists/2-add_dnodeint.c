@@ -2,7 +2,7 @@
 
 /**
  * add_dnodeint - adds a new node at the beginning of the list
- * @h: head node
+ * @head: head node
  * @n: number stored in the new node
  * Return: address of the new node
  */
